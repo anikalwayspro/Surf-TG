@@ -13,5 +13,6 @@ async def start(bot: Client, message: Message):
             file = await bot.get_messages(int(chat_id), int(message_id))
             media = is_media(file)
             await message.reply_cached_media(file_id=media.file_id, caption=f'**{media.file_name}**')
+            protect_content = true
         except Exception as e:
             print(f"An error occurred: {e}")
